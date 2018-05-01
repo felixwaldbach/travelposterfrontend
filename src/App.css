@@ -1,0 +1,55 @@
+.btn-link{
+  border-width: 0px;
+}
+
+.navbar {
+  text-align: center;
+}
+
+.btn {
+  color: white;
+  background-color: #670A0A;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #831515;
+}
+
+.container {
+  background-color: #F8F2E5;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+#navbarContainer {
+  background-color: #343A40;
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  margin-bottom: 0.5em;
+}
+h4 {
+  margin-top: 1.5em;
+}
+
+.formButton {
+  width: 100%;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.btn-secondary {
+  margin-right: 1em;
+  background-color: #343a40;
+}
+
+.btn-secondary:hover {
+  background-color: #474f57;
+}
+
+footer {
+  background-color: white;
+}
