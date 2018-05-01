@@ -7,10 +7,6 @@ import $ from "jquery";
  */
 class Register extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     setRegister() {
         this.register();
     }

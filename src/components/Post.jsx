@@ -1,4 +1,4 @@
-import React, {Component, Input} from 'react';
+import React, {Component} from 'react';
 import $ from 'jquery';
 import config from "../config";
 
@@ -40,11 +40,11 @@ class Post extends Component {
      * gets the supplier and creates the optionlist for the supplier-select
      */
     getServerData() {
-        $.getJSON(config.Server.serverURL + "user/get", "").then(response => {
+        /*$.getJSON(config.Server.serverURL + "api/user/get", "").then(response => {
             this.setState({
                 user: response
             });
-        });
+        });*/
     }
 
     /**
@@ -53,7 +53,6 @@ class Post extends Component {
     addPost() {
         console.log("Adding post..");
         let data = $("form").serialize();
-        console.log(data);
         $.post(config.Server.serverURL + "post/add", data).promise().then(this.props.setState(this.props.STATES.index));
     }
 

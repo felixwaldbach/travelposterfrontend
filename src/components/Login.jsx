@@ -7,10 +7,6 @@ import $ from "jquery";
  */
 class Login extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     setLogin() {
         if ((document.getElementById("name").value === "") || (document.getElementById("password").value === "")) {
             console.log("Nicht alle Felder ausgefüllt");
