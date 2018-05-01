@@ -16,9 +16,10 @@ class Login extends Component {
     }
 
     login() {
-        console.log("Logging in..");
         let data = $("form").serialize();
-        $.post(config.Server.serverURL + "api/user/login", data).promise().then(this.props.setState(this.props.STATES.index));
+        $.post(config.Server.serverURL + "api/user/login", data).promise().then(response => {
+            this.props.setState(response.page);
+        });
     }
 
     /**

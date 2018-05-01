@@ -12,6 +12,7 @@ class Index extends Component {
         super(props);
 
         this.state = {
+            message: "",
             posts: []
         }
 
@@ -19,6 +20,12 @@ class Index extends Component {
     }
 
     getServerData() {
+        $.getJSON(config.Server.serverURL + "index", "").then(response => {
+           this.setState({
+               message: response.message
+           })
+        });
+
         $.getJSON(config.Server.serverURL + "post/get/all", "").then(response => this.setState({
             posts: response
         }));
@@ -41,7 +48,7 @@ class Index extends Component {
 
         return (
             <div>
-                <h1>Index</h1>
+                <h1>{this.state.message}</h1>
                 {posts}
             </div>
         )
