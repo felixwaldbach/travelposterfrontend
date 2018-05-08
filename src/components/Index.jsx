@@ -1,7 +1,8 @@
 import $ from "jquery";
 import React, { Component }  from 'react';
-import ShareMemory from './ShareMemory';
 
+import Browser from './Browser';
+import ShareMemory from './ShareMemory';
 import config from "../config";
 
 /**
@@ -54,6 +55,7 @@ class Index extends Component {
                   <div class="row">
                     <div class="col-sm">
                       <ShareMemory />
+                      <Browser />
                     </div>
                   </div>
                 </div>
