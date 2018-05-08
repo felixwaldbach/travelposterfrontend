@@ -25,13 +25,12 @@ class ShareMemory extends Component {
               <p class="align-middle">If you want to share one of your memories with your fellow TravelPosters, drag & drop an image into this area.</p>
                 <form>
                   <div class="form-group">
-                    <label for="name">Your name</label>
+                    <label for="name">Your name:</label>
                     <input type="text" class="form-control" id="name" placeholder="John Johnson"
                       onChange={ (e) => { this.setState({ name: e.target.value }) } }
-                      value={ () => { return this.state.name; } }
                     />
                   </div>
-                  <button type="submit" class="btn btn-primary">Beam me up, scotty</button>
+                  <button type="submit" class="btn btn-primary" disabled>Beam me up, scotty</button>
                 </form>
             </div>
           </div>
