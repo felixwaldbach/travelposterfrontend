@@ -1,0 +1,77 @@
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: url(/img/header.jpg) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  color: #333333 !important;
+}
+
+.nav .nav-item button {
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.container {
+  background: none !important;
+}
+
+.share-memory h1 {
+  display: inline-block;
+  font-weight: 700;
+}
+
+.share-memory h1::after {
+  width: 80%;
+  height: 8px;
+  background-color: #1ba275;
+  display: block;
+  content: ' ';
+}
+
+.share-memory .container {
+  padding: 20px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  margin-top: 20px;
+}
+
+.share-memory .upload i {
+  font-size: 10em;
+  float: left;
+  color: rgba(0, 0, 0, 0.59);
+}
+
+.share-memory .upload p {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.share-memory .upload label {
+  font-weight: 400;
+}
+
+.share-memory .upload input {
+  border-radius: 3px;
+}
+
+.share-memory .upload button {
+  background-color: #1ba275;
+  border-radius: 0 !important;
+}
+
+.share-memory .upload button:active {
+  background-color: #179068 !important;
+}
+
+footer {
+  font-size: 0.8em;
+  padding: 0 20px;
+  color: #7a7a7a;
+  font-weight: 300;
+}
+
+footer strong {
+  font-weight: 400;
+}

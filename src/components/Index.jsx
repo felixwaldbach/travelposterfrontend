@@ -1,5 +1,7 @@
-import React, { Component}  from 'react';
 import $ from "jquery";
+import React, { Component }  from 'react';
+import ShareMemory from './ShareMemory';
+
 import config from "../config";
 
 /**
@@ -48,7 +50,16 @@ class Index extends Component {
 
         return (
             <div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm">
+                      <ShareMemory />
+                    </div>
+                  </div>
+                </div>
+
                 <h1>{this.state.message}</h1>
+
                 {posts}
             </div>
         )
