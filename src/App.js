@@ -24,7 +24,7 @@ class App extends Component {
             "index": 10, "post": 11
         })
         this.state = {
-            screen: this.STATES.login,
+            screen: this.STATES.index,
             login: false,
             user: null
         }
@@ -78,8 +78,8 @@ class App extends Component {
                     {this.returnState()}
                 </main>
                 <footer className="page-footer font-small mdb-color stylish-color-dark fixed-bottom">
-                    <div className="footer-copyright py-3 text-center">
-                        © 2018 Copyright: Felix Waldbach & Marius Kießling
+                    <div className="footer-copyright py-3">
+                        Created by <strong>Felix Waldbach</strong> & <strong>Marius Kießling</strong> (TINF16B)
                     </div>
 
                 </footer>
@@ -99,44 +99,17 @@ class Menu extends Component {
      */
     render() {
         return (
-
             <div className="container-fluid p-0 mb-4">
+                <ul class="nav justify-content-center navbar navbar-expand-sm bg-dark navbar-dark">
+                  <li class="nav-item">
+                      <button onClick={() => this.props.setState(this.props.STATES.index)}
+                              className={"btn-link navbar-brand pl-0"}>Travelposter
+                      </button>
+                  </li>
+                </ul>
+
                 <div className={"headerImg"}>
                 </div>
-                <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
-                    <div className={"container"} id={"navbarContainer"}>
-                        <button onClick={() => this.props.setState(this.props.STATES.index)}
-                                className={"btn-link navbar-brand pl-0"}>Travelposter
-                        </button>
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <button onClick={() => this.props.setState(this.props.STATES.login)}
-                                        className="nav-link btn-link">Login
-                                </button>
-                            </li>
-                            <li className="nav-item">
-                                <button onClick={() => this.props.setState(this.props.STATES.register)}
-                                        className="nav-link btn-link">Register
-                                </button>
-                            </li>
-                            <li className="nav-item">
-                                <button onClick={() => this.props.setState(this.props.STATES.index)}
-                                        className="nav-link btn-link">Index
-                                </button>
-                            </li>
-                            <li className="nav-item">
-                                <button onClick={() => this.props.setState(this.props.STATES.post)}
-                                        className="nav-link btn-link">Post
-                                </button>
-                            </li>
-                            <li className="nav-item">
-                                <button onClick={() => this.props.setState(this.props.STATES.logout)}
-                                        className="nav-link btn-link">Logout
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
             </div>
 
         );
