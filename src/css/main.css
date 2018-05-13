@@ -37,10 +37,23 @@ body {
   margin-top: 20px;
 }
 
+.share-memory .upload .dropbox {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 196px;
+  height: 196px;
+  position: absolute;
+  opacity: 0.4;
+  border-radius: 5px;
+}
+
 .share-memory .upload i {
   font-size: 10em;
   float: left;
   color: rgba(0, 0, 0, 0.59);
+  padding: 20px 38px;
 }
 
 .share-memory .upload p {
