@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone'
+import $ from "jquery";
 
 import '../css/main.css';
+
+import config from "../config";
 
 class ShareMemory extends Component {
   constructor(props) {
@@ -13,6 +16,7 @@ class ShareMemory extends Component {
     }
 
     this.createPostButtonDisabled = this.createPostButtonDisabled.bind(this);
+    this.createPost = this.createPost.bind(this);
   }
 
   _onDrop(acceptedFiles) {
@@ -39,6 +43,24 @@ class ShareMemory extends Component {
       }
   }
 
+  createPost(e) {
+    var imageBase64Extracted = this.state.fileAsDataURL.split(",").pop();
+    console.log(imageBase64Extracted);
+    var data = {
+      name: this.state.name,
+      file: imageBase64Extracted
+    };
+
+    $.post(config.Server.serverURL + "post/fileupload", data, (response) => {
+      this.setState({
+        name: "",
+        fileAsDataURL: ""
+      });
+      
+
+    }, "json");
+  }
+
   render() {
     return (
       <div class="share-memory">
@@ -57,15 +79,13 @@ class ShareMemory extends Component {
             </div>
             <div class="col">
               <p class="align-middle">If you want to share one of your memories with your fellow TravelPosters, drag & drop an image into this area.</p>
-                <form>
-                  <div class="form-group">
-                    <label for="name">Your name:</label>
-                    <input type="text" class="form-control" id="name" placeholder="John Johnson"
-                      onChange={ (e) => { this.setState({ name: e.target.value }) } }
-                    />
-                  </div>
-                  <button type="submit" class="btn btn-primary" disabled={ this.createPostButtonDisabled() }>Beam me up, scotty</button>
-                </form>
+                <div class="form-group">
+                  <label for="name">Your name:</label>
+                  <input type="text" class="form-control" id="name" placeholder="John Johnson"
+                    onChange={ (e) => { this.setState({ name: e.target.value }) } }
+                  />
+                </div>
+                <button class="btn btn-primary" onClick={ this.createPost } disabled={ this.createPostButtonDisabled() }>Beam me up, scotty</button>
             </div>
           </div>
         </div>
