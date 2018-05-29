@@ -11,6 +11,8 @@ class ShareMemory extends Component {
       name: "",
       fileAsDataURL: ""
     }
+
+    this.createPostButtonDisabled = this.createPostButtonDisabled.bind(this);
   }
 
   _onDrop(acceptedFiles) {
@@ -27,6 +29,14 @@ class ShareMemory extends Component {
 
         reader.readAsDataURL(file);
     });
+  }
+
+  createPostButtonDisabled() {
+      if(this.state.name === "" || this.state.fileAsDataURL === "") {
+        return true;
+      } else {
+        return false;
+      }
   }
 
   render() {
@@ -54,7 +64,7 @@ class ShareMemory extends Component {
                       onChange={ (e) => { this.setState({ name: e.target.value }) } }
                     />
                   </div>
-                  <button type="submit" class="btn btn-primary" disabled>Beam me up, scotty</button>
+                  <button type="submit" class="btn btn-primary" disabled={ this.createPostButtonDisabled() }>Beam me up, scotty</button>
                 </form>
             </div>
           </div>
