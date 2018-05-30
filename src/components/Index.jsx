@@ -15,23 +15,7 @@ class Index extends Component {
         super(props);
 
         this.state = {
-            message: "",
-            posts: []
         }
-
-        this.getServerData();
-    }
-
-    getServerData() {
-        $.getJSON(config.Server.serverURL + "index", "").then(response => {
-           this.setState({
-               message: response.message
-           })
-        });
-
-        $.getJSON(config.Server.serverURL + "post/get/all", "").then(response => this.setState({
-            posts: response
-        }));
     }
 
     /**
@@ -39,16 +23,6 @@ class Index extends Component {
      * @returns html code
      */
     render() {
-        let posts = [];
-        for(let p in this.state.posts) {
-            posts.push(
-            <div className={"postContainer"}>
-                <div className={"postContent"}>Author: {this.state.posts[p].author}</div>
-                <div className={"postContent"}>Title: {this.state.posts[p].title}</div>
-                <div className={"postContent"}>Content: {this.state.posts[p].content}</div>
-            </div>);
-        }
-
         return (
             <div>
                 <div class="container">
@@ -59,10 +33,6 @@ class Index extends Component {
                     </div>
                   </div>
                 </div>
-
-                <h1>{this.state.message}</h1>
-
-                {posts}
             </div>
         )
     }

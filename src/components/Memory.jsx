@@ -12,7 +12,7 @@ class Memory extends Component {
     return (
       <div class="memory">
         <div class="image">
-          <img src={ this.props.src } />
+          <img alt="" src={ this.props.src } />
 
           <div class="overlay">
             <span class="author"><i class="fas fa-user-astronaut"></i> Shared by: <strong>{ this.props.author }</strong></span>
