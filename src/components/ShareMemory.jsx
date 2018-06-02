@@ -56,8 +56,8 @@ class ShareMemory extends Component {
         name: "",
         fileAsDataURL: ""
       });
-      
 
+      this.props.browserUpdateRequest();
     }, "json");
   }
 

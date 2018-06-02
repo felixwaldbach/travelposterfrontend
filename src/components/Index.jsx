@@ -16,6 +16,14 @@ class Index extends Component {
 
         this.state = {
         }
+
+        this.browser = React.createRef();
+
+        this.requestBrowserUpdate = this.requestBrowserUpdate.bind(this);
+    }
+
+    requestBrowserUpdate() {
+      console.log(this.browser.current.getServerData());
     }
 
     /**
@@ -28,8 +36,8 @@ class Index extends Component {
                 <div class="container">
                   <div class="row">
                     <div class="col-sm">
-                      <ShareMemory />
-                      <Browser />
+                      <ShareMemory browserUpdateRequest={ this.requestBrowserUpdate } />
+                      <Browser ref={ this.browser } />
                     </div>
                   </div>
                 </div>
